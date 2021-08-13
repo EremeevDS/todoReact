@@ -1,0 +1,21 @@
+@import "var";
+@import 'macro-css';
+
+html{
+   font-size: 62.5%;
+}
+
+body {
+   background-color: $bg-light;
+   line-height: 1.6;
+   font-size: 1.4rem;
+   color: $text-black;
+   font-family: -apple-system,BlinkMacSystemFont,
+       "Segoe UI",Roboto,"Helvetica Neue",Arial,
+       "Noto Sans",sans-serif,"Apple Color Emoji",
+       "Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.wrapper{
+   width: 1000px;
+}

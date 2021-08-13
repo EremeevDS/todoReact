@@ -1,0 +1,14 @@
+@import "../App/var";
+.post{
+   border-bottom: 1px solid $text-black;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+
+   strong{
+      font-size: 1.8rem;
+   }
+
+   p{
+      margin: 0;
+   }
+}
