@@ -13,6 +13,8 @@ function App() {
       {id: 3, title: 'б', desc: 'sit dolor', popular: 2},
    ])
 
+   const [searchValue, setSearchValue] = React.useState('')
+
    const deletePost = (id) =>{
       setPosts(posts.filter(p => p.id !== id))
    }
@@ -40,10 +42,21 @@ function App() {
          setPosts(newArr.sort(compare))
       }
    }
+   const onSearchItem = (searchTitle) =>{
+      setSearchValue(searchTitle)
+   }
+   const filteredPosts = posts.filter(post => {
+      return post.title.toLowerCase().includes(searchValue)
+   })
    return (
       <div className='wrapper m-auto mt-50'>
          <div className='d-flex justify-between'>
-            <Posts posts={posts} deletePost={deletePost} onFilter={onFilter}/>
+            <Posts
+               posts={filteredPosts}
+               deletePost={deletePost}
+               onFilter={onFilter}
+               onSearchItem={onSearchItem}
+            />
             <CreatePost addPost={addPost}/>
          </div>
       </div>

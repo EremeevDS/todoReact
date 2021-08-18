@@ -1,16 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import {PostItem, PostFilter} from '../index'
+import {PostItem, PostFilter, PostSearch} from '../index'
 
 import PostStyles from './Posts.module.scss'
 
 function Posts(props) {
-   const {posts, deletePost, onFilter} = props
+   const {posts, deletePost, onFilter, onSearchItem} = props
    return (
       <div className={PostStyles.posts}>
             <div className={`${PostStyles.header} d-flex justify-between align-center`}>
                <h2>POST</h2>
+               <PostSearch onSearchItem={onSearchItem}/>
                <PostFilter onFilter={onFilter}/>
             </div>
             {posts.length ? 
